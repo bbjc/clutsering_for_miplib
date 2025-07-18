@@ -1,0 +1,8 @@
+#!/bin/bash -l
+#SBATCH -c 28
+#SBATCH -t 569
+#SBATCH -p batch
+#SBATCH --exclusive
+cd
+micromamba activate a_even_better_name_than_base
+python -u node-selection-method-using-gp/evaluation_miplib_pb.py -function SCIP -time_limit 30 -partition transfer
